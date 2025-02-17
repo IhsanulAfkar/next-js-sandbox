@@ -1,0 +1,53 @@
+{
+  "name": "next-js-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-react": "^9.5.0",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-collapsible": "^1.1.3",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@tinymce/tinymce-react": "^5.1.1",
+    "@tiptap/core": "^2.11.5",
+    "@tiptap/extension-color": "^2.11.5",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
+    "ckeditor5": "^44.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "flowbite-react": "^0.10.2",
+    "flowbite-typography": "^1.0.5",
+    "is-hotkey": "^0.2.0",
+    "lucide-react": "^0.475.0",
+    "next": "14.2.22",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.85.0",
+    "slate": "^0.112.0",
+    "slate-history": "^0.110.3",
+    "slate-react": "^0.112.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.22",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
