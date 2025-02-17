@@ -12,18 +12,18 @@ const TinyMCE = () => {
   };
   return (
     <>
-      <Editor
-        licenseKey="gpl"
-        apiKey="gpl"
+       <Editor
+        tinymceScriptSrc='/tinymce/tinymce.min.js'
+        licenseKey='gpl'
         onInit={(_evt, editor) => editorRef.current = editor}
-        initialValue="<p>This is the initial content of the editor.</p>"
+        initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
           menubar: false,
           plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'charmap', 'preview',
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
             'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-            'insertdatetime', 'table', 'wordcount'
+            'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
           ],
           toolbar: 'undo redo | blocks | ' +
             'bold italic forecolor | alignleft aligncenter ' +

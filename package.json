@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "node ./postinstall.js"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^9.5.0",
@@ -28,6 +29,7 @@
     "clsx": "^2.1.1",
     "flowbite-react": "^0.10.2",
     "flowbite-typography": "^1.0.5",
+    "fs-extra": "^11.3.0",
     "is-hotkey": "^0.2.0",
     "lucide-react": "^0.475.0",
     "next": "14.2.22",
@@ -38,7 +40,8 @@
     "slate-history": "^0.110.3",
     "slate-react": "^0.112.1",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tinymce": "^7.6.1"
   },
   "devDependencies": {
     "@types/node": "^20",
