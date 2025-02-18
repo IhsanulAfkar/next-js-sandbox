@@ -9,9 +9,11 @@ import {
   Frame,
   GalleryVerticalEnd,
   Map,
+  Moon,
   PieChart,
   Settings2,
   SquareTerminal,
+  Sun,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -25,11 +27,12 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import ThemeSwitcher from "./theme-switcher"
 
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "lorem",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
@@ -52,7 +55,7 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Editor",
       url: "/",
       icon: SquareTerminal,
       isActive: true,
@@ -72,17 +75,17 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Components",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: "React Select",
+          url: "/react-select",
         },
         {
-          title: "Explorer",
-          url: "#",
+          title: "Calendar",
+          url: "/calendar",
         },
         {
           title: "Quantum",
@@ -155,12 +158,23 @@ const data = {
     },
   ],
 }
+const themes = [
+  {
+    name: 'light',
+    logo: Sun
+  },
+  {
+    name: 'dark',
+    logo: Moon
+  },
+
+]
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <ThemeSwitcher themes={themes} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
