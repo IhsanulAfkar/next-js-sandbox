@@ -5,9 +5,7 @@ import { useBreadcrumb } from '@/context/BreadcrumbContext'
 import Link from 'next/link';
 import React from 'react';
 
-interface Props { }
-
-const AppBreadcrumb: NextPage<Props> = () => {
+const AppBreadcrumb: NextPage = () => {
     const { breadcrumbs } = useBreadcrumb();
     return <Breadcrumb>
         <BreadcrumbList>

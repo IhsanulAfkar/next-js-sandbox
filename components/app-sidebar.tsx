@@ -9,6 +9,7 @@ import {
   Cuboid,
   Frame,
   GalleryVerticalEnd,
+  LockKeyhole,
   Map,
   Moon,
   PencilLine,
@@ -72,20 +73,16 @@ const data = {
           title: "Calendar",
           url: "/component/calendar",
         },
-        {
-          title: "Quantum",
-          url: "#",
-        },
       ],
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
+      title: "Auth & Security",
+      url: "/security",
+      icon: LockKeyhole,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: "Auth JS (Next Auth)",
+          url: "/security/auth-js",
         },
         {
           title: "Get Started",

@@ -10,6 +10,14 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			typography: {
+				quoteless: {
+					css: {
+						'blockquote p:first-of-type::before': { content: 'none' },
+						'blockquote p:first-of-type::after': { content: 'none' },
+					},
+				},
+			},
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
@@ -71,7 +79,7 @@ const config: Config = {
 	},
 	plugins: [require("tailwindcss-animate"),
 	flowbite.plugin(),
-	require('flowbite-typography'),
+	// require('flowbite-typography'),
 	require('@tailwindcss/typography')],
 };
 export default config;
