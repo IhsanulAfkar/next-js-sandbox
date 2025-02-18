@@ -141,3 +141,99 @@ export interface ColourOption {
     },
   ];
   
+  export const ReactSelectMD = `
+# React Select
+
+## installation
+\`\`\`
+npm i react-select react-select/animated
+\`\`\`
+
+usage
+\`\`\`js
+import React from 'react'
+import Select from 'react-select'
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
+
+const MyComponent = () => (
+  <Select options={options} />
+)
+\`\`\`
+for more detailed example or usage, visi [React Select](https://react-select.com/home) website.
+
+## Dark Mode 
+Below is custom implementation for dark mode
+
+update \`globals.css\` (or your base tailwind css file)
+\`\`\`css
+@layer components {
+  .my-react-select-container .my-react-select__control {
+    @apply bg-white dark:bg-neutral-700 border-2 border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500;
+  }
+  .my-react-select-container .my-react-select__control--is-focused {
+    @apply border-neutral-500 hover:border-neutral-500 dark:border-neutral-400 dark:hover:border-neutral-400 shadow-none;
+  }
+  .my-react-select-container .my-react-select__menu {
+    @apply bg-neutral-100 dark:bg-neutral-700 border-2 border-neutral-300 dark:border-neutral-600;
+  }
+  .my-react-select-container .my-react-select__option {
+    @apply text-neutral-600 dark:text-neutral-200 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-800;
+  }
+  .my-react-select-container .my-react-select__indicator-separator {
+    @apply bg-neutral-400;
+  }
+  .my-react-select-container .my-react-select__input-container,
+  .my-react-select-container .my-react-select__placeholder,
+  .my-react-select-container .my-react-select__single-value {
+    @apply text-neutral-600 dark:text-neutral-200;
+  }
+
+    /* Multi-value container and labels */
+  .my-react-select-container .my-react-select__multi-value {
+    @apply bg-neutral-400 dark:bg-neutral-600 rounded-md;
+  }
+
+  .my-react-select-container .my-react-select__multi-value__label {
+    @apply text-neutral-800 dark:text-neutral-100;
+  }
+
+  /* Multi-value remove button and SVG */
+  .my-react-select-container .my-react-select__multi-value__remove {
+    @apply bg-neutral-500 dark:bg-neutral-700 hover:bg-neutral-600 dark:hover:bg-neutral-800 rounded-full;
+  }
+
+  .my-react-select-container .my-react-select__multi-value__remove .css-tj5bde-Svg {
+    @apply text-neutral-200 dark:text-neutral-400;
+  }
+
+  /* Clear and dropdown indicator */
+  .my-react-select-container .my-react-select__clear-indicator,
+  .my-react-select-container .my-react-select__dropdown-indicator {
+    @apply text-neutral-400 dark:text-neutral-600;
+  }
+
+  .my-react-select-container .my-react-select__clear-indicator:hover,
+  .my-react-select-container .my-react-select__dropdown-indicator:hover {
+    @apply text-neutral-500 dark:text-neutral-500;
+  }
+
+  .my-react-select-container .my-react-select__clear-indicator .css-tj5bde-Svg,
+  .my-react-select-container .my-react-select__dropdown-indicator .css-tj5bde-Svg {
+    @apply fill-current;
+  }
+}
+\`\`\`
+
+then for each element from \`react-select\` add \`className\` and \`classNamePrefix\`
+\`\`\`jsx
+<Select 
+options={options}
+className="my-react-select-container"
+classNamePrefix="my-react-select" />
+\`\`\`
+`

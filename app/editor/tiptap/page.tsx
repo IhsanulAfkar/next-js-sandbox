@@ -1,8 +1,8 @@
 import RichEditor from '@/components/pages/dashboard/rich-editor/RichEditor'
 import { Metadata, NextPage } from 'next'
 
-const metadata:Metadata = {
-  title:'Rich Editor',
+export const metadata:Metadata = {
+  title:'Tiptap',
 }
 const Page: NextPage = ({}) => {
   return <RichEditor/>

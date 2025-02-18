@@ -1,8 +1,11 @@
 'use client'
 import { NextPage } from 'next'
 import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
 import AsyncSelect from 'react-select/async';
-import { ColourOption, colourOptions } from './data';
+import { ColourOption, colourOptions, ReactSelectMD } from './data';
+import Markdown from 'react-markdown';
+import { useTheme } from 'next-themes';
 const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
@@ -15,6 +18,8 @@ const ReactSelectPage: NextPage = ({ }) => {
             i.label.toLowerCase().includes(inputValue.toLowerCase())
         );
     };
+    const { theme } = useTheme()
+    const animatedComponents = makeAnimated();
 
     const loadOptions = (
         inputValue: string,
@@ -24,15 +29,37 @@ const ReactSelectPage: NextPage = ({ }) => {
             callback(filterColors(inputValue));
         }, 1000);
     };
+    const lightThemeClass = theme === "light" ? "" : "my-react-select-container";
+    const lightThemeClassPrefix = theme === "light" ? "" : "my-react-select";
     return <>
-        <p className='font-bold text-3xl'>React Select</p>
+        <p className='font-bold text-3xl'>Example</p>
+        <hr />
         <div>
             <p className='font-semibold '>Static Options</p>
-            <Select options={options}></Select>
+            <Select options={options} className={lightThemeClass}
+                classNamePrefix={lightThemeClassPrefix}></Select>
         </div>
         <div>
             <p className='font-semibold '>Async Options</p>
-            <AsyncSelect cacheOptions loadOptions={loadOptions} defaultOptions />
+            <AsyncSelect className={lightThemeClass}
+                classNamePrefix={lightThemeClassPrefix} cacheOptions loadOptions={loadOptions} defaultOptions />
+        </div>
+        <div>
+            <p className='font-semibold '>Multi & Animated Options</p>
+            <Select
+                className={lightThemeClass}
+                classNamePrefix={lightThemeClassPrefix}
+                closeMenuOnSelect={false}
+                components={animatedComponents}
+                defaultValue={[colourOptions[4], colourOptions[5]]}
+                isMulti
+                options={colourOptions}
+            />
+        </div>
+        <hr />
+        <p className='font-bold text-xl'>Setup</p>
+        <div className='prose dark:prose-invert max-w-full '>
+            <Markdown >{ReactSelectMD}</Markdown>
         </div>
     </>
 }

@@ -5,7 +5,7 @@ interface Props {}
 
 const RichEditor: NextPage<Props> = ({}) => {
   return <>
-  <p className='font-bold text-xl'>Rich Editor using Tiptap</p>
+  <p className='font-bold text-xl'>Rich Editor using Tiptap (On Progress)</p>
     <Tiptap/>
   </>
 }

@@ -6,10 +6,12 @@ import {
   BookOpen,
   Bot,
   Command,
+  Cuboid,
   Frame,
   GalleryVerticalEnd,
   Map,
   Moon,
+  PencilLine,
   PieChart,
   Settings2,
   SquareTerminal,
@@ -19,7 +21,7 @@ import {
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+
 import {
   Sidebar,
   SidebarContent,
@@ -33,59 +35,42 @@ import ThemeSwitcher from "./theme-switcher"
 const data = {
   user: {
     name: "lorem",
-    email: "m@example.com",
+    email: "lorem@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Editor",
-      url: "/",
-      icon: SquareTerminal,
+      title: "Rich Editor",
+      url: "/editor",
+      icon: PencilLine,
       isActive: true,
       items: [
         {
-          title: "Rich Editor",
-          url: "/rich-editor",
+          title: "Tiptap",
+          url: "/editor/tiptap",
         },
         {
           title: "TinyMCE",
-          url: "/tinymce",
+          url: "/editor/tinymce",
         },
         {
           title: "Slate JS",
-          url: "/slate-editor",
+          url: "/editor/slate-editor",
         },
       ],
     },
     {
       title: "Components",
-      url: "#",
-      icon: Bot,
+      url: "/component",
+      icon: Cuboid,
       items: [
         {
           title: "React Select",
-          url: "/react-select",
+          url: "/component/react-select",
         },
         {
           title: "Calendar",
-          url: "/calendar",
+          url: "/component/calendar",
         },
         {
           title: "Quantum",

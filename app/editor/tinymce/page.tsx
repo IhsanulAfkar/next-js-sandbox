@@ -1,8 +1,8 @@
 import TinyMCE from '@/components/pages/tinymce/Tinymce'
 import { Metadata, NextPage } from 'next'
 
-const metadata:Metadata = {
-    title:'Rich Editor',
+export const metadata:Metadata = {
+    title:'TinyMCE',
   }
 const Page: NextPage = ({}) => {
   return <TinyMCE/>

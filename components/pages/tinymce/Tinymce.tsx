@@ -52,7 +52,7 @@ const TinyMCE = () => {
       <button onClick={() => setOpenModal(true)}>Show editor content</button>
       <hr />
       <p className='font-bold text-xl'>Setup</p>
-      <div className='prose dark:prose-invert max-w-max'>
+      <div className='prose dark:prose-invert max-w-full'>
         <Markdown >{TinyMCEReadme}</Markdown>
       </div>
       <TextModal openModal={openModal} setOpenModal={setOpenModal} content={editorRef?.current?.editor?.getContent()} />
